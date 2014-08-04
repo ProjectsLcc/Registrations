@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Registration | LCC-SJCE</title>
+		<meta charset="utf-8" />
+		<meta name="author" content="LCC Registration">
+		<meta name="description" content="Register to be a member of LCC 2014">
+		<meta name="keywords" content="LCC, lcc, lcc registration, LCC REGISTRATION, lcc registration 2014, LCC REGISTRATION 2014, linux campus club sjce, SJCE Mysore lcc">
+		<meta name="viewport" content="user-scalable = yes">
+		<script type="text/javascript" src="./js/validate.js"></script>
+		<link type="text/css" rel="stylesheet" href="./css/registration_form.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+	</head>
+	<body>
+		<style type='text/css'>
+			/*<![CDATA[*/
+			#fbplikebox{display: block;padding: 0;z-index: 99999;position: fixed;}
+			.fbplbadge {background-color:#3B5998;display: block;height: 150px;top: 50%;margin-top: -75px;position: absolute;left: -47px;width: 47px;background-image: url('http://1.bp.blogspot.com/-PUYBb2326SY/T13eXFv1sPI/AAAAAAAABdE/VOqfHVMXhWk/s1600/w2b_vertical-right.png');background-repeat: no-repeat;overflow: hidden;-webkit-border-top-left-radius: 8px;-webkit-border-bottom-left-radius: 8px;-moz-border-radius-topleft: 8px;-moz-border-radius-bottomleft: 8px;border-top-left-radius: 8px;border-bottom-left-radius: 8px;}
+			/*]]>*/
+		</style>
+		<script type='text/javascript'>
+			/*<![CDATA[*/
+				(function(w2b){
+					w2b(document).ready(function(){
+					var $dur = 'medium'; // Duration of Animation
+					w2b('#fbplikebox').css({right: -250, 'top' : 350 })
+					w2b('#fbplikebox').hover(function () {
+					w2b(this).stop().animate({
+                    right: 0
+					}, $dur);
+					}, function () {
+						w2b(this).stop().animate({
+						right: -250
+						}, $dur);
+					});
+					w2b('#fbplikebox').show();
+					});
+				})(jQuery);
+			/*]]>*/
+		</script>
+		<div id='fbplikebox' style='display:none;'>
+			<div class='fbplbadge'></div> 
+			<iframe src='http://www.facebook.com/plugins/likebox.php?href=http%3A%2F%2Ffacebook.com%2FLCCSJCE&amp;width=250&amp;height=260&amp;colorscheme=light&amp;show_faces=true&amp;border_color=%23C4C4C4&amp;stream=false&amp;header=false'scrolling='no' frameborder='0' style='border:none; overflow:hidden; width:250px; height:260px;background:#FFFFFF;' allowtransparency='true'></iframe>
+		</div>
+		<ul id="menu">
+			<li><a href="http://lccsjce.org/">&#8617; BACK TO HOME</a></li> 
+		</ul>
+		<br>
+		<hr style="color: blue;">
+		<form action="#" name="StudentRegistration" onsubmit="return(validate());">
+			<table cellpadding="5" width="30%" align="center" cellspacing="3">
+			<tr>
+				<th colspan=2>
+					<center><font size=5 style="color: #cfba58;"><b>Signup for LCC-SJCE now!</b></font></center>
+				</th>
+			</tr>
+			<tr>
+				<td><b>Name</b></td>
+				<td><input type="text" name="textnames" id="textname" placeholder="Name" size="30"></td>
+			</tr>
+			<tr>
+				<td><b>Email</b></td>
+				<td><input type="text" name="emailid" id="emailid" placeholder="Email" size="30"></td>
+			</tr>
+			<tr>
+				<td><b>Sex</b></td>
+				<td style="padding-left:14;">
+					<input type="radio" name="sex" value="Male" size="10">Male
+					<input type="radio" name="sex" value="Female" size="10">Female
+				</td>
+			</tr>
+			<tr>
+				<td><b>T-Shirt Size</b></td>
+				<td><select name="tshirt">
+					<option value="-1">Select Size</option>
+					<option value="Small">Small(S)</option>
+					<option value="Medium">Medium(M)</option>
+					<option value="Large">Large(L)</option>
+					<option value="Extra-Large">Extra-Large(XL)</option>
+				</select></td>
+			</tr>
+			<tr>
+				<td><b>Department</b></td>
+				<td><select name="department">
+					<option value="-1" selected>Select Department</option>
+					<option value="Biotech">BIO TECH</option>
+					<option value="Computer Science">COMPUTER SCIENCE</option>
+					<option value="Construction Tech">CONSTRUCTION TECH</option>
+					<option value="Civil">CIVIL</option>
+					<option value="Electronics">ELECTRONICS</option>
+					<option value="Electricals">ELECTRICALS</option>
+					<option value="Environmental">ENVIRONMENTAL</option>
+					<option value="Industrial Production">INDUSTRIAL PRODUCTION</option>
+					<option value="Information Science">INFORMATION SCIENCE</option>
+					<option value="Instrumentation Tech">INSTRUMENTATION TECHNOLOGY</option>
+					<option value="Mechanical">MECHANICAL</option>
+					<option value="Polymer Science">POLYMER SCIENCE</option>
+				</select></td>
+			</tr>
+			<tr>
+				<td><b>Semester</b></td>
+				<td><select name="semester">
+					<option value="-1" selected>Select Semester</option>
+					<option value="I">I</option>
+					<option value="II">II</option>
+					<option value="III">III</option>
+					<option value="IV">IV</option>
+					<option value="V">V</option>
+					<option value="VI">VI</option>
+					<option value="VII">VII</option>
+					<option value="VIII">VIII</option>
+				</select></td>
+			</tr>
+			<tr>
+				<td><b>Mobile No</b></td>
+				<td><input type="text" name="mobileno" placeholder="Mobile No" id="mobileno" size="30"></td>
+			</tr>
+		</table>
+		<br>
+		<center>
+			<input type="submit" id="submit" value="SUBMIT" />
+		</center>
+	</form>
+</body>
+</html>
