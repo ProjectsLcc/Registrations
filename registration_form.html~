@@ -47,7 +47,7 @@
 		</ul>
 		<br>
 		<hr style="color: blue;">
-		<form action="update.php" name="StudentRegistration" onsubmit="return(validate());" method="post">
+		<form action="#" name="StudentRegistration" onsubmit="return(validat())" method="post">
 			<table cellpadding="5" width="30%" align="center" cellspacing="3">
 			<tr>
 				<th colspan=2>

@@ -15,7 +15,7 @@
 		<style type='text/css'>
 			/*<![CDATA[*/
 			#fbplikebox{display: block;padding: 0;z-index: 99999;position: fixed;}
-			.fbplbadge {background-color:#3B5998;display: block;height: 150px;top: 50%;margin-top: -75px;position: absolute;left: -47px;width: 47px;background-image: url('http://1.bp.blogspot.com/-PUYBb2326SY/T13eXFv1sPI/AAAAAAAABdE/VOqfHVMXhWk/s1600/w2b_vertical-right.png');background-repeat: no-repeat;overflow: hidden;-webkit-border-top-left-radius: 8px;-webkit-border-bottom-left-radius: 8px;-moz-border-radius-topleft: 8px;-moz-border-radius-bottomleft: 8px;border-top-left-radius: 8px;border-bottom-left-radius: 8px;}
+			.fbplbadge {background-color:white;display: block;height: 150px;top: 50%;margin-top: -75px;position: absolute;left: -47px;width: 47px;background-image: url('http://1.bp.blogspot.com/-PUYBb2326SY/T13eXFv1sPI/AAAAAAAABdE/VOqfHVMXhWk/s1600/w2b_vertical-right.png');background-repeat: no-repeat;overflow: hidden;-webkit-border-top-left-radius: 8px;-webkit-border-bottom-left-radius: 8px;-moz-border-radius-topleft: 8px;-moz-border-radius-bottomleft: 8px;border-top-left-radius: 8px;border-bottom-left-radius: 8px;}
 			/*]]>*/
 		</style>
 		<script type='text/javascript'>
@@ -47,7 +47,7 @@
 		</ul>
 		<br>
 		<hr style="color: blue;">
-		<form action="update.php" name="StudentRegistration" onsubmit="return(validate());" method="post">
+		<form method="post">
 			<table cellpadding="5" width="30%" align="center" cellspacing="3">
 			<tr>
 				<th colspan=2>
@@ -56,11 +56,11 @@
 			</tr>
 			<tr>
 				<td><b>Name</b></td>
-				<td><input type="text" name="textnames" id="textname" placeholder="Name" size="30"></td>
+				<td><input type="text" name="textnames" id="textname" placeholder="Name" size="30" value=""></td>
 			</tr>
 			<tr>
 				<td><b>Email</b></td>
-				<td><input type="text" name="emailid" id="emailid" placeholder="Email" size="30"></td>
+				<td><input type="text" name="emailid" id="emailid" placeholder="Email" size="30" value=""></td>
 			</tr>
 			<tr>
 				<td><b>Sex</b></td>
@@ -113,7 +113,7 @@
 			</tr>
 			<tr>
 				<td><b>Mobile No</b></td>
-				<td><input type="text" name="mobileno" placeholder="Mobile No" id="mobileno" size="30"></td>
+				<td><input type="text" name="mobileno" placeholder="Mobile No" id="mobileno" size="30" value="7832"></td>
 			</tr>
 		</table>
 		<br>
@@ -121,5 +121,19 @@
 			<input type="submit" id="submit" value="SUBMIT" />
 		</center>
 	</form>
+	<?php
+    if(count($_POST) > 0)
+    {
+        $con = mysqli_connect("localhost", "root", "pass", "data");
+        $name = $_POST['textnames'];
+        $email = $_POST['emailid'];
+        $sex = $_POST['sex'];
+        $department = $_POST['department'];
+        $sem = $_POST['semester'];
+        $phone = $_POST['phone'];
+        echo $phone;
+        $result = mysqli_query($con, "INSERT INTO 'data' ('Name', 'Emailid', 'Sex', 'Shirt', 'Department', 'Semester', 'PhoneNo.', 'Paid') VALUES ($name, $email, $sex, $department, $sem, $phone, $result, 'Not Yet')");
+    }    
+?>
 </body>
 </html>
