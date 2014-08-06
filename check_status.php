@@ -1,0 +1,54 @@
+<?php
+    if(count($_POST) > 0)
+    {
+        $con = mysqli_connect("localhost", "root", "pass", "members");
+        $phone = $_POST['mobileno-status'];
+        $query = "SELECT Paid FROM data WHERE PhoneNo='$phone'";
+        $result = mysqli_query($con, $query);
+        $row = mysqli_fetch_array($result);
+        $yes_string = '<html style="background-color: black; background-size:100%;">
+	<head>
+		<title>Registration | LCC-SJCE</title>
+		<meta charset="utf-8" />
+		<meta name="author" content="LCC Registration">
+		<meta name="description" content="Thanks for joining us!">
+		<meta name="viewport" content="user-scalable = yes">
+	</head>
+	<body style="font-family:arial,sans-serif;
+	-webkit-font-smoothing:antialiased;
+	font-size:120%;
+	margin:1em;">
+		<center>
+			<h1 style="color: white; font-size: 2em;"></b>STATUS : PAYMENT <a style="color: green;">RECIEVED</a><b></h1>
+			<br>
+			<p style="color: white; font-size: 1.2em;"><b>WELCOME TO LCC-SJCE</b></p>
+		</center>
+	</body>
+</html>';
+        
+        $no_string = '<html style="background-color: black; background-size:100%;">
+	<head>
+		<title>Registration | LCC-SJCE</title>
+		<meta charset="utf-8" />
+		<meta name="author" content="LCC Registration">
+		<meta name="description" content="Thanks for joining us!">
+		<meta name="viewport" content="user-scalable = yes">
+	</head>
+	<body style="font-family:arial,sans-serif;
+	-webkit-font-smoothing:antialiased;
+	font-size:120%;
+	margin:1em;">
+		<center>
+			<h1 style="color: white; font-size: 2em;"></b>STATUS : PAYMENT <a style="color: red;">NOT</a> RECIEVED<b></h1>
+			<br>
+			<p style="color: white; font-size: 1.2em;"><b>Please Complete Your Registration Manually With The Concerned LCC Register Person!</b></p>
+		</center>
+	</body>
+</html>';
+        
+        if($row['Paid'] == "Complete")
+            echo $yes_string;
+        else
+            echo $no_string;
+    }
+?>

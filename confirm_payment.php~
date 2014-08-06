@@ -1,0 +1,12 @@
+<?php
+    if(count($_POST) > 0)
+    {
+        $con = mysqli_connect("localhost", "root", "pass", "members");
+        $username = $_POST['Username'];
+        $password = $_POST['Password'];
+        $phone = $_POST['mobileno-status'];
+        $query = "UPDATE data SET Paid='Complete' WHERE PhoneNo='$phone'";
+        $result = mysqli_query($con, $query);
+    }
+?>
+

@@ -18,25 +18,13 @@ SET time_zone = "+00:00";
 
 
 CREATE DATABASE IF NOT EXISTS `members` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
-USE `members`;
+USE `admins`;
 
 -- --------------------------------------------------------
 
 --
 -- Table structure for table `tblproject`
 --
-
-CREATE TABLE IF NOT EXISTS `data` (
-  `Name` varchar(40) DEFAULT NULL,
-  `Emailid` varchar(40) DEFAULT NULL,
-  `Sex` varchar(40) DEFAULT NULL,
-  `Shirt` varchar(40) DEFAULT NULL, 
-  `Department` varchar(40) DEFAULT NULL,
-  `Semester` varchar(40) DEFAULT NULL,
-  `PhoneNo` varchar(40) DEFAULT NULL,
-  `Paid` varchar(40) DEFAULT NULL,
-  PRIMARY KEY (`PhoneNo`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 CREATE TABLE IF NOT EXISTS `admins` (
   `Username` varchar(40) DEFAULT NULL,

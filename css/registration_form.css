@@ -48,7 +48,7 @@ td {
 }
 
 input[type=text], input[type=password], select {
-	color: #768BB7;
+	color: #4A5672;
 	margin-left: 14px;
 	width: 188px;
 	height: 21px;
@@ -65,3 +65,20 @@ input[type=text], input[type=password], select {
 	background-color: #768BB7;
 	color: white;
 }
+
+#check-status{
+	border: 2px solid #21180d;
+	border-radius: 8px;
+	width: 119px;
+	height: 37px;
+	background-color: #768BB7;
+	color: white;
+	display: inline-block;
+	vertical-align: middle;
+}
+
+hr{
+    border-top:2px dotted white;
+	color: blue;
+}
+

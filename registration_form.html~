@@ -38,6 +38,16 @@
 				})(jQuery);
 			/*]]>*/
 		</script>
+		<script>
+			$(document).ready(function(){
+				$("p").hide();
+				$("#submit").click(function(){
+					if(validate() == true) {
+						$("p").show();
+					}
+				});
+			});
+		</script>
 		<div id='fbplikebox' style='display:none;'>
 			<div class='fbplbadge'></div> 
 			<iframe src='http://www.facebook.com/plugins/likebox.php?href=http%3A%2F%2Ffacebook.com%2FLCCSJCE&amp;width=250&amp;height=260&amp;colorscheme=light&amp;show_faces=true&amp;border_color=%23C4C4C4&amp;stream=false&amp;header=false'scrolling='no' frameborder='0' style='border:none; overflow:hidden; width:250px; height:260px;background:#FFFFFF;' allowtransparency='true'></iframe>
@@ -47,11 +57,11 @@
 		</ul>
 		<br>
 		<hr style="color: blue;">
-		<form action="#" name="StudentRegistration" onsubmit="return(validat())" method="post">
+		<form action="update.php" name="StudentRegistration" onsubmit="return(validate());" method="post">
 			<table cellpadding="5" width="30%" align="center" cellspacing="3">
 			<tr>
 				<th colspan=2>
-					<center><font size=5 style="color: #cfba58;"><b>Signup for LCC-SJCE now!</b></font></center>
+					<center><font size=5 style="color: #cfba58; padding-right: 12px;"><b>Signup for LCC-SJCE now!</b></font></center>
 				</th>
 			</tr>
 			<tr>
@@ -120,6 +130,20 @@
 		<center>
 			<input type="submit" id="submit" value="SUBMIT" />
 		</center>
+		<hr>
+		<center>
+			<h3 style="color: white;"> Already Registered? Check Payment status now! </h3>
+		</center>
 	</form>
+	<form action="confirm_payment.php" method="post">
+		<tr>
+			<td><b style="color: white; padding-left: 413px;">Mobile No</b></td>
+			<td><input type="text" name="mobileno-status" id="mobileno-status" placeholder="Mobile No" size="30"></td>
+			<td><input type="submit" id="check-status" value="CHECK STATUS" /></td>
+		</tr>
+	</form>
+	<center>
+		<p style="color: white;"></p>
+	</center>
 </body>
 </html>
