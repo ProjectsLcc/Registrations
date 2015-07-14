@@ -7,7 +7,6 @@ body {
 	font-family:arial,sans-serif;
 	-webkit-font-smoothing:antialiased;
 	font-size:120%;
-	margin:1em;
 }
 
 ::selection {
@@ -33,6 +32,7 @@ td {
 	list-style:none;
 	display: inline; 
 	color: #0f412e;
+	padding-left: 35px;
 }
 
 #menu a {
@@ -78,7 +78,7 @@ input[type=text], input[type=password], select {
 }
 
 hr{
-    border-top:2px dotted white;
-	color: blue;
+    border:1px dotted white;
+	color: white;
 }
 

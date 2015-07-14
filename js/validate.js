@@ -15,8 +15,10 @@ function validate() {
 		return false;
 	}
 	
-	if ( ( document.StudentRegistration.sex[0].checked == false ) && ( document.StudentRegistration.sex[1].checked == false ) ) {
-		alert ( "Please enter a gender: Male or Female" );
+	if( document.StudentRegistration.sex.value == "-1" )
+	{
+		alert( "Please choose a Gender" );
+		document.StudentRegistration.sex.focus();
 		return false;
 	}
 	
@@ -34,10 +36,10 @@ function validate() {
 		return false;
 	}
 	
-	if( document.StudentRegistration.semester.value == "-1" )
+	if( document.StudentRegistration.year.value == "-1" )
 	{
-		alert( "Please choose a Semester" );
-		document.StudentRegistration.semester.focus();
+		alert( "Please choose a Year" );
+		document.StudentRegistration.year.focus();
 		return false;
 	}
 	

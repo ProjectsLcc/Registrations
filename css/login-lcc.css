@@ -58,11 +58,11 @@ input[type=text],input[type=password] {
 input[type=submit] {
     margin-right: 20px;
     margin-top: 20px;
-    width: 80px;
+    width: 95px;
     height: 30px;
     font-size: 14px;
     font-weight: bold;
-    color: #fff;
+    color: black;
     background-image: -webkit-gradient(linear, left top, left bottom, from(#acd6ef), to(#6ec2e8));
     background-image: linear-gradient(top left 90deg, #acd6ef 0%, #6ec2e8 100%);
     border-radius: 30px;

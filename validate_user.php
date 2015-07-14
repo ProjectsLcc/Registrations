@@ -1,67 +1,61 @@
 <?php
-        
-        $con = mysqli_connect("localhost", "root", "pass", "members");
-        $username = $_POST['Username'];
-        $password = $_POST['Password'];
-        $phone = $_POST['Mobileno'];
-        $yes_string = '<html style="background-color: black; background-size:100%;">
-	<head>
-		<title>Registration | LCC-SJCE</title>
-		<meta charset="utf-8" />
-		<meta name="author" content="LCC Registration">
-		<meta name="description" content="Thanks for joining us!">
-		<meta name="viewport" content="user-scalable = yes">
-	</head>
-	<body style="font-family:arial,sans-serif;
-	-webkit-font-smoothing:antialiased;
-	font-size:120%;
-	margin:1em;">
-		<center>
-			<h1 style="color: white; font-size: 2em;"></b>STATUS : PAYMENT <a style="color: green;">RECIEVED</a><b></h1>
-			<br>
-		</center>
-	</body>
-</html>';
-        
-        
-        $no_string = '<html style="background-color: black; background-size:100%;">
-	<head>
-		<title>Registration | LCC-SJCE</title>
-		<meta charset="utf-8" />
-		<meta name="author" content="LCC Registration">
-		<meta name="description" content="Thanks for joining us!">
-		<meta name="viewport" content="user-scalable = yes">
-	</head>
-	<body style="font-family:arial,sans-serif;
-	-webkit-font-smoothing:antialiased;
-	font-size:120%;
-	margin:1em;">
-		<center>
-			<h1 style="color: white; font-size: 2em;"></b><a style="color: red;">INVALID LOGIN CREDENTIALS</a><b></h1>
-			<br>
-		</center>
-	</body>
-</html>';
-        if($username !='*' and $password != "*")
+    require_once "variables.php";
+    date_default_timezone_set('Asia/Calcutta');
+            
+    $con = mysqli_connect($hostname, $host_user, $host_pass, $host_database);
+    if(!$con)
+    	die('Could not access server, please try again, sorry for the inconvenience caused'. mysql_error());
+    $username = $_POST[$html_username];
+    $password = $_POST[$html_password];
+    $phone = $_POST[$html_mobileno];
+    $query_phone = "SELECT * FROM data WHERE PhoneNo='$phone'";
+    $result = mysqli_query($con, $query_phone);
+    $row = mysqli_fetch_array($result);
+    $timepaid = date("h:i:sa d/m/Y");
+
+    if(count($row) == 0)
+        echo $member_not_registered;
+    else
+    {
+        $query_check = "SELECT * FROM admins WHERE Username='$username' AND Password='$password'";
+        $result = mysqli_query($con, $query_check);
+        $row = mysqli_fetch_array($result);
+        if(count($row) > 0)
         {
-            $query_check = "SELECT * FROM admins WHERE Username='$username' AND Password='$password'";
-            $result = mysqli_query($con, $query_check);
-            $row = mysqli_fetch_array($result);
-            if(count($row) > 0)
+            if(($row[$sql_admins_username] == $username) and ($row[$sql_admins_password] == $password))
             {
-                if(($row['Username'] == $username) and ($row['Password'] == $password))
+                $check_query = "SELECT Paid FROM data WHERE PhoneNo='$phone'";
+                $check_result = mysqli_query($con, $check_query);
+                $row = mysqli_fetch_array($check_result);
+                if($row[$sql_admins_paid] == $not_paid)
                 {
+                    $query = "SELECT * from data WHERE PhoneNo='$phone'";
+                    $result1 = mysqli_query($con, $query);
+                    $row = mysqli_fetch_array($result1);
+                    $email = $row[$sql_data_email];
+                    $tmp = exec("python mail.py .$email");                        
+
                     $query = "UPDATE data SET Paid='Complete' WHERE PhoneNo='$phone'";
                     $result1 = mysqli_query($con, $query);
-                    echo $yes_string;
+                
+                    $query_inc = "UPDATE admins SET Numvalidated=Numvalidated+1 WHERE Username='$username'";
+                    $result = mysqli_query($con, $query_inc);
+                    
+                    $query_paidto = "UPDATE data SET Paidto='$username' WHERE PhoneNo='$phone'";
+                    $result = mysqli_query($con, $query_paidto);
+                    
+                    $query_time = "UPDATE data SET Timepaid='$timepaid' WHERE PhoneNo='$phone'";
+                    $result = mysqli_query($con, $query_time);
+                    
+                    echo $payment_recieved;
                 }
                 else
-                    echo $no_string;
+                    echo $user_already_paid;
             }
             else
-                echo $no_string;
+                echo $invalid_login;
         }
         else
-            echo $no_string;
-            
+            echo $invalid_login;
+    }
 ?>

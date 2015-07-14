@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Registration | LCC-SJCE</title>
+		<meta charset="utf-8" />
+		<meta name="author" content="LCC Registration">
+		<meta name="description" content="Register to be a member of LCC 2014">
+		<meta name="keywords" content="LCC, lcc, lcc registration, LCC REGISTRATION, lcc registration 2014, LCC REGISTRATION 2014, linux campus club sjce, SJCE Mysore lcc">
+		<meta name="viewport" content="target-densitydpi=device-dpi">
+		<!--meta name="viewport" content="user-scalable = yes"-->
+		<!--META HTTP-EQUIV="Refresh" CONTENT="0; URL=register.php"-->
+		<script type="text/javascript" src="./js/validate.js"></script>
+		<link rel="shrotcut icon" href="./images1/logo.png">
+		<link type="text/css" rel="stylesheet" href="./css/registration_form.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+	</head>
+	<body>
+		<style type='text/css'>
+			/*<![CDATA[*/
+			#fbplikebox{display: block;padding: 0;z-index: 99999;position: fixed;}
+			.fbplbadge {background-color:#3B5998;display: block;height: 150px;top: 50%;margin-top: -75px;position: absolute;left: -47px;width: 47px;background-image: url('http://1.bp.blogspot.com/-PUYBb2326SY/T13eXFv1sPI/AAAAAAAABdE/VOqfHVMXhWk/s1600/w2b_vertical-right.png');background-repeat: no-repeat;overflow: hidden;-webkit-border-top-left-radius: 8px;-webkit-border-bottom-left-radius: 8px;-moz-border-radius-topleft: 8px;-moz-border-radius-bottomleft: 8px;border-top-left-radius: 8px;border-bottom-left-radius: 8px;}
+			/*]]>*/
+		</style>
+		<script type='text/javascript'>
+			/*<![CDATA[*/
+				(function(w2b){
+					w2b(document).ready(function(){
+					var $dur = 'medium'; // Duration of Animation
+					w2b('#fbplikebox').css({right: -250, 'top' : 350 })
+					w2b('#fbplikebox').hover(function () {
+					w2b(this).stop().animate({
+                    right: 0
+					}, $dur);
+					}, function () {
+						w2b(this).stop().animate({
+						right: -250
+						}, $dur);
+					});
+					w2b('#fbplikebox').show();
+					});
+				})(jQuery);
+			/*]]>*/
+		</script>
+		<!--
+		<script>
+			$(document).ready(function(){
+				$("p").hide();
+				$("#submit").click(function(){
+					if(validate() == true) {
+						$("p").show();
+					}
+				});
+			});
+		</script>-->
+		<div id='fbplikebox' style='display:none;'>
+			<div class='fbplbadge'></div> 
+			<iframe src='http://www.facebook.com/plugins/likebox.php?href=http%3A%2F%2Ffacebook.com%2FLCCSJCE&amp;width=250&amp;height=260&amp;colorscheme=light&amp;show_faces=true&amp;border_color=%23C4C4C4&amp;stream=false&amp;header=false'scrolling='no' frameborder='0' style='border:none; overflow:hidden; width:250px; height:260px;background:#FFFFFF;' allowtransparency='true'></iframe>
+		</div>
+		<ul id="menu">
+			<li><a href="http://lccsjce.org/">&#8617; BACK TO HOME</a></li>
+			<img src="./images1/logo.png" style="padding-top:6px; padding-left: 5px; height: 459px; opacity:0.3;">
+		</ul>
+		<br>
+		<hr style="color: white;">
+		<form action="update2.php" name="StudentRegistration" onsubmit="return(validate());" method="post">
+			<table cellpadding="5" width="30%" align="center" cellspacing="3">
+			<tr>
+				<td><img src="./images1/sjce-logo.png" style="height: 70px; width: 70px; opacity: 1;"></td>
+				<th colspan=2>
+					<center><font size=5 style="color: #cfba58;">Signup for LCC-SJCE now!</font></center>
+				</th>
+			</tr>
+			<tr>
+				<td>Name</td>
+				<td><input type="text" name="textnames" id="textname" placeholder="Name" size="30"></td>
+			</tr>
+			<tr>
+				<td>Email</td>
+				<td><input type="text" name="emailid" id="emailid" placeholder="Email" size="30"></td>
+			</tr>
+			<tr>
+				<td>Sex</td>
+				<td><select name="sex">
+					<option value="-1">Select Gender</option>
+					<option value="Male">Male</option>
+					<option value="Female">Female</option>
+				</select></td>
+			</tr>
+			<tr>
+				<td>T-Shirt Size</td>
+				<td><select name="tshirt">
+					<option value="-1">Select Size</option>
+					<option value="Small">Small(S)</option>
+					<option value="Medium">Medium(M)</option>
+					<option value="Large">Large(L)</option>
+					<option value="XL">Extra-Large(XL)</option>
+				</select></td>
+			</tr>
+			<tr>
+				<td>Branch & Section</td>
+				<td><select name="department">
+					<option value="-1" selected>Select Department</option>
+					<option value="Biotech">Biotech</option>
+					<option value="Computer Science A">Computer Science A</option>
+					<option value="Computer Science B">Computer Science B</option>
+					<option value="Construction Tech">Construction Tech</option>
+					<option value="Civil">Civil</option>
+					<option value="E&C A">E&C A</option>
+					<option value="E&C B">E&C B</option>
+					<option value="EEE">EEE</option>
+					<option value="Environmental">Environmental</option>
+					<option value="Industrial Production">Industrial Production</option>
+					<option value="Information Science">Information Science</option>
+					<option value="Instrumentation Tech">Instrumentation Tech</option>
+					<option value="Mechanical">Mechanical</option>
+					<option value="Polymer Science">Polymer Science</option>
+					<option value="MCA">MCA</option>
+				</select></td>
+			</tr>
+			<tr>
+				<td>Year</td>
+				<td><select name="year">
+					<option value="-1" selected>Select Year</option>
+					<option value="1">1</option>
+					<option value="2">2</option>
+					<option value="3">3</option>
+					<option value="4">4</option>
+				</select></td>
+			</tr>
+			<tr>
+			<td>
+<img src="captcha.php" alt="Verification pass-phase" /></td>
+			<td><input type="text" id="verify" name="verify" placeholder="Enter Captcha here"></td>
+
+</tr>
+			<tr>
+				<td>Mobile No</td>
+				<td><input type="text" name="mobileno" placeholder="Mobile No" id="mobileno" size="30"></td>
+			</tr>
+
+
+		</table>
+		<br>
+		<center>
+			<input type="submit" id="submit" value="SUBMIT" />
+		</center>
+		<hr>
+		<center>
+			<h3 style="color: #cfba58;"> Already Registered? Check Payment status now! </h3>
+		</center>
+	</form>
+	<form action="check_status.php" method="post">
+		<tr>
+			<td><b style="color: white; padding-left: 425px;">Mobile No</b></td>
+			<td><input type="text" name="mobileno-status" id="mobileno-status" placeholder="Mobile No" size="30"></td>
+			<td><b style="padding-left: 15px;"></b></td>
+			<td><input type="submit" id="check-status" value="CHECK STATUS" /></td>
+		</tr>
+	</form>
+	<!--
+	<center>
+		<p style="color: white;"></p>
+	</center>-->
+</body>
+</html>

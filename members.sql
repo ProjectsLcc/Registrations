@@ -32,15 +32,20 @@ CREATE TABLE IF NOT EXISTS `data` (
   `Sex` varchar(40) DEFAULT NULL,
   `Shirt` varchar(40) DEFAULT NULL, 
   `Department` varchar(40) DEFAULT NULL,
-  `Semester` varchar(40) DEFAULT NULL,
+  `Year` varchar(40) DEFAULT NULL,
   `PhoneNo` varchar(40) DEFAULT NULL,
   `Paid` varchar(40) DEFAULT NULL,
+  `Paidto` varchar(40) DEFAULT NULL,
+  `Timepaid` varchar(40) DEFAULT NULL,
+  `Shirtreceived` varchar(40) DEFAULT NULL,
+  `CD` varchar(40) DEFAULT NULL,
   PRIMARY KEY (`PhoneNo`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 CREATE TABLE IF NOT EXISTS `admins` (
   `Username` varchar(40) DEFAULT NULL,
   `Password` varchar(40) DEFAULT NULL,
+  `Numvalidated` int(11) DEFAULT '0',
   PRIMARY KEY (`Username`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
